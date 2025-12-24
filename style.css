@@ -128,13 +128,7 @@ nav a:hover {
 .arrow.left { left: 20px; }
 .arrow.right { right: 20px; }
 
-/* mobile */
-@media (max-width: 768px) {
-  .slider {
-    width: 95%;
-    height: 60vh;
-  }
-}
+
 
 
 /* Products */
@@ -182,17 +176,7 @@ footer {
     margin-top: 40px;
 }
 
-/* Mobile Navigation */
-@media (max-width: 600px) {
-    .navbar {
-        flex-direction: column;
-        gap: 10px;
-    }
 
-    nav a {
-        margin: 0 10px;
-    }
-}
 
 .why-us-text {
   width: 70%;
@@ -224,13 +208,4 @@ footer {
   color: #555;
 }
 
-/* mobile */
-@media (max-width: 768px) {
-  .why-us-text {
-    width: 90%;
-  }
 
-  .why-us-text h2 {
-    font-size: 26px;
-  }
-}
