@@ -11,7 +11,7 @@ body {
 
 /* Header */
 header {
-    background: #FAAE00;
+    background: #ff0000;
     padding: 12px 20px;
 }
 
@@ -26,17 +26,23 @@ header {
     align-items: center;
     gap: 10px;
     color: white;
+    font-size: 24px;
+    font-weight: bold;  
 }
 
 .logo img {
     width: 40px;
     height: 40px;
+    border-radius:2px;
 }
 
-.logo span {
-    font-size: 20px;
-    font-weight: bold;
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;  /* ✅ shows middle */
 }
+
 
 nav a {
     color: white;
@@ -49,15 +55,87 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Section */
 .section {
-    padding: 40px 20px;
-    text-align: center;
+  width: 100%;
+  padding: 60px 0;
+  text-align: center;   /* ✅ centers ALL text inside */
 }
 
-.section h2 {
-    margin-bottom: 25px;
+
+
+/* Slider */
+.slider {
+  position: relative;
+  width: 70%;
+  max-width: 1100px;
+  height: 80vh;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 16px;
 }
+
+.slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center; /* 🔥 center image */
+}
+
+/* caption */
+.caption {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  background: rgba(0,0,0,0.55);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+}
+
+/* arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  font-size: 28px;
+  padding: 12px 18px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.arrow.left { left: 20px; }
+.arrow.right { right: 20px; }
+
+/* mobile */
+@media (max-width: 768px) {
+  .slider {
+    width: 95%;
+    height: 60vh;
+  }
+}
+
 
 /* Products */
 .products {
@@ -114,4 +192,45 @@ footer {
     nav a {
         margin: 0 10px;
     }
+}
+
+.why-us-text {
+  width: 70%;
+  max-width: 900px;
+  margin: 80px auto;
+  line-height: 1.8;
+}
+
+.why-us-text h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #8b3d3d;
+}
+
+.why-us-text p {
+  font-size: 17px;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.why-us-text strong {
+  color: #000;
+}
+
+.why-us-text .promise {
+  margin-top: 25px;
+  font-size: 16px;
+  font-style: italic;
+  color: #555;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .why-us-text {
+    width: 90%;
+  }
+
+  .why-us-text h2 {
+    font-size: 26px;
+  }
 }

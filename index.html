@@ -2,61 +2,130 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Fresh Juice Corner</title>
+    <title>Rathan Juice Center</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  let currentSlide = 0;
+  const slides = document.querySelectorAll(".slide");
+  let interval;
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[index].classList.add("active");
+  }
+
+  function startAuto() {
+    interval = setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, 4000);
+  }
+
+  function resetAuto() {
+    clearInterval(interval);
+    startAuto();
+  }
+
+  window.nextSlide = function () {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+    resetAuto();
+  }
+
+  window.prevSlide = function () {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+    resetAuto();
+  }
+
+  showSlide(currentSlide);
+  startAuto();
+});
+</script>
+
+
+
 <body>
 
 <header>
     <div class="navbar">
         <div class="logo">
             <!-- If no image, remove img and keep text -->
-            <img src="https://img.freepik.com/premium-vector/logo-fresh-juice-glass-fresh-juice_1166763-10712.jpg" alt="Logo">
-            <span>Fresh Juice Corner</span>
+            <img src="./RJC logo.png" alt="Logo">
+            <span>Rathan Juice Center</span>
         </div>
         <nav>
             <a href="index.html">Home</a>
-            <a href="about.html">About</a>
+            <a href="products.html">Our Products</a>
             <a href="contact.html">Contact</a>
         </nav>
     </div>
 </header>
 
 <section class="section">
-    <h2>Our Juice Menu</h2>
-
-    <div class="products">
-        <div class="product">
-            <h3>Orange Juice</h3>
-			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_k3dmXxGhAIYtpo1VDWy8SJi30wQqJ5J9Ig&s" alt="Image">
-            <p>Made from hand-picked oranges. Rich in Vitamin C, boosts immunity and refreshes instantly.</p>
-        </div>
-
-        <div class="product">
-            <h3>Apple Juice</h3>
-			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2GGNbA878sMXzyucYALUJAlTHn-xINBkkbw&s" alt="Image">
-            <p>Fresh apples blended for a naturally sweet and healthy drink, perfect for daily energy.</p>
-        </div>
-
-        <div class="product">
-            <h3>Mango Juice</h3>
-			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7y9dDDD4Szeq1jsC471SWa5PHaV_w7-66MA&s" alt="Image">
-            <p>Thick and delicious seasonal mango juice with natural sweetness and rich flavor.</p>
-        </div>
-
-        <div class="product">
-            <h3>Pineapple Juice</h3>
-			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLoj-3KA4gwt32yLf_sGUU7gyb47_eE2QvSg&s" alt="Image">
-            <p>A tropical blend with a perfect balance of sweet and tangy taste, aids digestion.</p>
-        </div>
-
-        <div class="product">
-            <h3>Mixed Fruit Juice</h3>
-			<img src="https://img.pikbest.com/photo/20240821/mix-juice-recipes-detox-glass-fruit-combination-benefits-_10747482.jpg!bw700" alt="Image">
-            <p>A healthy combination of multiple fruits packed with vitamins and minerals.</p>
-        </div>
+    <section class="slider">
+  <div class="slides">
+    <div class="slide active">
+      <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxw16a4XI7xkNPan0i5HqSHwWq2CIyBRsj7ZR14G1oGYM4kGDAAZc01G4PBFfBYvSLcQp0N4YHkQyNMC1lD4tl5GvqYFGrNnk6sUxW31kwFsCxo8JjN9lur12lrR6xiAnRJvuaK=s1360-w1360-h1020-rw" alt="Fruit Juices">
+      <div class="caption">
+        <h1>Chamrajpete Main Branch</h1>
+      </div>
     </div>
+
+    <div class="slide">
+      <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzt4ISkrsMkEg2PbWR15Y5-78Clzq3AIzrgE_YXsgivBBs9whwAZIir2u5vDHrZCTh2UycQNVEn2_wZ2TKLcXlgRziw6lm3UhSPfHccihhOk2qK1QHxUAFWdZt31kzsGAnygDoddA=s1360-w1360-h1020-rw" alt="Seasonal Juices">
+      <div class="caption">
+        <h1>Vijaynagar Branch</h1>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="./mango_softy.png" alt="Mixed Juices">
+      <div class="caption">
+        <h1>Softy</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARROWS -->
+  <button class="arrow left" onclick="prevSlide()">❮</button>
+  <button class="arrow right" onclick="nextSlide()">❯</button>
+
 </section>
+<section class="why-us-text">
+  <h2>What Makes Rathan Juice Center Special?</h2>
+
+  <p>
+    <strong>Fresh Ingredients</strong> – Sourced daily with no artificial flavors or colors.
+  </p>
+
+  <p>
+    <strong>Sugarless Options</strong> – Designed for the health-conscious generation.
+  </p>
+
+  <p>
+    <strong>Hygienic Preparation</strong> – Maintained at every step of the process.
+  </p>
+
+  <p>
+    <strong>Premium Quality</strong> – Only dry fruits and carefully selected ingredients.
+  </p>
+
+  <p>
+    <strong>Constant Innovation</strong> – Continuous improvement in taste and presentation.
+  </p>
+
+  <p class="promise">
+    Our promise: <strong>“Freshness, Fitness & Flavour in Every Sip.”</strong>
+  </p>
+</section>
+
+
+
+
 
 <footer>
     © 2025 Fresh Juice Corner. All Rights Reserved.
