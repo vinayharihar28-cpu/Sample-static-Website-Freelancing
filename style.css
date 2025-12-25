@@ -515,6 +515,9 @@ footer {
 
 /* MOBILE MENU VISIBILITY */
 @media (max-width: 768px) {
+  .contact-details {
+  margin: 40px auto;
+}
   .center-nav {
     position: static;
     transform: none;
