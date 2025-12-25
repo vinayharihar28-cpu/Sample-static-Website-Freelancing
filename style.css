@@ -12,13 +12,13 @@
 /* =========================
    GLOBAL
    ========================= */
-body {body {
+body {
   line-height: 1.6;
-  background: linear-gradient(135deg, #fffafb, #ffe8ed);
+  background: linear-gradient(135deg, #ffe9ed, #fbecf0);
   padding-top: 0;   /* ✅ IMPORTANT */
 }
 
-}
+
 
 header {
   position: sticky;
@@ -397,12 +397,16 @@ footer {
     border-radius: 0;
   }
 
-  .caption {
-    bottom: 15px;
-    left: 15px;
-    font-size: 13px;
-    padding: 8px 12px;
-  }
+ .caption {
+  font-size:xx-small;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  background: rgba(234, 0, 0, 0.954);
+  color: rgb(255, 255, 255);
+  padding: 15px 20px;
+  border-radius: 10px;
+}
 
   .arrow {
     font-size: 18px;
@@ -436,7 +440,98 @@ footer {
     margin: auto;
     text-align: center;
   }
+
+
+
+  .center-nav {
+    background: rgba(255, 0, 0, 0.95);
+    padding: 10px 0;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .center-nav a {
+    display: block;
+    padding: 8px 0;
+  }
 }
+
+@media (max-width: 768px) {
+
+  /* FIX HEADER HEIGHT */
+  header {
+    padding-bottom: 10px;
+  }
+
+  .navbar {
+    align-items: center;
+  }
+
+  /* MOBILE MENU FIX */
+  .center-nav {
+    position: static;              /* remove absolute */
+    transform: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    background: rgba(255, 0, 0, 0.95); /* visible bg */
+    padding: 10px 0;
+    border-radius: 12px;
+  }
+
+  .center-nav a {
+    font-size: 14px;
+    color: #fff;
+    padding: 6px 10px;
+  }
+}
+
+
+/* CONTACT PAGE FIX */
+.branches {
+  max-width: 800px;
+  margin: auto;
+  display: grid;
+  gap: 30px;
+}
+
+.branch-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  text-align: center;
+}
+
+.branch-card iframe {
+  width: 100%;
+  height: 350px;
+  border-radius: 12px;
+  border: none;
+  margin-top: 15px;
+}
+
+/* MOBILE MENU VISIBILITY */
+@media (max-width: 768px) {
+  .center-nav {
+    position: static;
+    transform: none;
+    background: rgba(255,0,0,0.95);
+    padding: 10px 0;
+    width: 100%;
+    justify-content: center;
+    border-radius: 12px;
+  }
+
+  .center-nav a {
+    color: #fff;
+    padding: 6px 10px;
+    display: block;
+  }
+}
+
 
 
 .center-feature {
