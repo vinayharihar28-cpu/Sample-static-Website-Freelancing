@@ -11,25 +11,29 @@
     <link rel="icon" type="image/png" href="./images/RJC logo transperent.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
+
+
+
 <body>
 
 <header>
-    <div class="navbar">
-        <div class="logo">
-            <!-- If no image, remove img and keep text -->
-            <img src="./images/RJC logo.png" alt="Logo">
-            <span>Rathan Juice Center</span>
-        </div>
-
-        <!-- CENTER ALIGNED MENU -->
-        <nav class="center-menu">
-            <a href="index.html">Home</a>
-            <a href="products.html">Our Products</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+  <div class="navbar">
+    <div class="logo">
+      <img src="./images/RJC logo.png" alt="Logo">
+      <span>Rathan Juice Center</span>
     </div>
+
+    <nav class="center-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Our Products</a>
+      <a href="contact.html">Contact</a>  
+    </nav>
+  </div>
 </header>
 
 <!-- ABOUT SECTION -->
@@ -125,6 +129,20 @@
 <footer>
     © 2025 Rathan Juice Center. All Rights Reserved.
 </footer>
+
+<script>
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+</script>
+
+
 
 </body>
 </html>

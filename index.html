@@ -7,6 +7,10 @@
     <link rel="icon" type="image/png" href="./images/RJC logo transperent.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <script>
@@ -51,22 +55,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-<body>
 
+<body>
 <header>
-    <div class="navbar">
-        <div class="logo">
-            <!-- If no image, remove img and keep text -->
-            <img src="./images/RJC logo.png" alt="Logo">
-            <span>Rathan Juice Center</span>
-        </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="products.html">Our Products</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+  <div class="navbar">
+    <div class="logo">
+      <img src="./images/RJC logo.png" alt="Logo">
+      <span>Rathan Juice Center</span>
     </div>
+
+    <nav class="center-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Our Products</a>
+      <a href="contact.html">Contact</a>  
+    </nav>
+  </div>
 </header>
+
+
+ 
+
 
 <section class="section">
     <section class="slider">
@@ -93,41 +101,75 @@ document.addEventListener("DOMContentLoaded", () => {
   <button class="arrow right" onclick="nextSlide()">❯</button>
 
 </section>
-<section class="why-us-text">
+
+
+<section class="home-highlight">
   <h2>What Makes Rathan Juice Center Special?</h2>
 
-  <p>
-    <strong>Fresh Ingredients</strong> – Sourced daily with no artificial flavors or colors.
-  </p>
+  <div class="features">
+    <div class="feature">
+      <span>🍊</span>
+      <p><strong>Fresh Ingredients</strong><br>
+      Sourced daily with no artificial flavors or colors.</p>
+    </div>
 
-  <p>
-    <strong>Sugarless Options</strong> – Designed for the health-conscious generation.
-  </p>
+    <div class="feature">
+      <span>🚫🍬</span>
+      <p><strong>Sugarless Options</strong><br>
+      Designed for the health-conscious generation.</p>
+    </div>
 
-  <p>
-    <strong>Hygienic Preparation</strong> – Maintained at every step of the process.
-  </p>
+    <div class="feature">
+      <span>🧼</span>
+      <p><strong>Hygienic Preparation</strong><br>
+      Maintained at every step of the process.</p>
+    </div>
 
-  <p>
-    <strong>Premium Quality</strong> – Only dry fruits and carefully selected ingredients.
-  </p>
+    <div class="feature">
+      <span>🌰</span>
+      <p><strong>Premium Quality</strong><br>
+      Only dry fruits and carefully selected ingredients.</p>
+    </div>
 
+    <div class="feature center-feature">
+  <span>✨</span>
   <p>
-    <strong>Constant Innovation</strong> – Continuous improvement in taste and presentation.
+    <strong>Constant Innovation</strong><br>
+    Continuous improvement in taste and presentation.
   </p>
+</div>
+
+  </div>
 
   <p class="promise">
-    Our promise: <strong>“Freshness, Fitness & Flavour in Every Sip.”</strong>
+    “Freshness, Fitness & Flavour in Every Sip.”
   </p>
+
+  <a href="products.html" class="home-btn">Explore Our Products</a>
 </section>
 
 
 
-
+</section>
 
 <footer>
     © 2025 Rathan Juice Center. All Rights Reserved.
 </footer>
+
+
+<script>
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+</script>
+
+
 
 </body>
 </html>
